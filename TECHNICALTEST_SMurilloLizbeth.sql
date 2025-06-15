@@ -16,7 +16,7 @@ foreign key (user_id) references Users(user_id));
 create table Artists(artist_id int primary key,
 artist_name varchar(30), 
 genre varchar(30), 
-country_of_origin varchar(30));--Varchar allows me to modify the lenght of the name of the variables
+country_of_origin varchar(30));--Varchar allows to modify the lenght of the name of the variables
 
 create table Streams(streams_id int primary key, 
 user_id int, 
@@ -49,7 +49,7 @@ where Streams.stream_date >= dateadd(day, -90,getdate())
 group by Subscriptions.plan_type, Artists.artist_name;
 
 /* Question 2
-Finance has requested a report that shows each user’s average monthly payment 
+Finance has requested a report that shows each userâ€™s average monthly payment 
 across all of their subscriptions and, 
 for each of their streams, how that payment is divided 
 among the record labels associated with the artist.
@@ -100,7 +100,7 @@ on streams.artist_id=artist_label_counts.artist_id
 
 /* Question 3
 We store hundreds of millions of rows in the Streams table. 
-We’d like a result set for each artist on each day in the last 12 months
+Weâ€™d like a result set for each artist on each day in the last 12 months
 */
  
 /*I'm going to separate the tables and convert the 
